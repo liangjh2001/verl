@@ -33,14 +33,14 @@ def extract_solution(solution_str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--local_dir', default='~/data/gsm8k')
+    parser.add_argument('--local_dir', default='/data/liangjh/verl/data/gsm8k')
     parser.add_argument('--hdfs_dir', default=None)
 
     args = parser.parse_args()
 
     data_source = 'openai/gsm8k'
 
-    dataset = datasets.load_dataset(data_source, 'main')
+    dataset = datasets.load_dataset(data_source, 'main', cache_dir="/data/liangjh/model_set/datasets")
 
     train_dataset = dataset['train']
     test_dataset = dataset['test']
