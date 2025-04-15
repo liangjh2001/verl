@@ -32,6 +32,7 @@ class NaiveRewardManager:
         """We will expand this function gradually based on the available datasets"""
 
         # If there is rm score, we directly return rm score. Otherwise, we compute via rm_score_fn
+        # 这里的实现是，如果有了model-based rm的分数，就不用规则评判了
         if 'rm_scores' in data.batch.keys():
             if return_dict:
                 return {"reward_tensor": data.batch['rm_scores']}
