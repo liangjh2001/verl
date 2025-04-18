@@ -86,9 +86,9 @@ class TaskRunner:
         from pprint import pprint
         from omegaconf import OmegaConf
 
-        # 调试的时候加上
-        import pydevd_pycharm
-        pydevd_pycharm.settrace('localhost', port=6067, stdoutToServer=True, stderrToServer=True)
+        # # 调试的时候加上
+        # import pydevd_pycharm
+        # pydevd_pycharm.settrace('localhost', port=6067, stdoutToServer=True, stderrToServer=True)
 
 
         pprint(OmegaConf.to_container(config, resolve=True))  # resolve=True will eval symbol values
