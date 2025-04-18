@@ -211,6 +211,7 @@ class RLHFDataset(Dataset):
         row_dict['raw_prompt_ids'] = self.tokenizer.encode(raw_prompt, add_special_tokens=False)
 
         # encode prompts without chat template
+        # 如果不想用chat template，可以用这个
         if self.return_raw_chat:
             row_dict['raw_prompt'] = chat
 
